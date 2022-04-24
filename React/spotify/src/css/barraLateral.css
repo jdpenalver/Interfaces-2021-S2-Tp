@@ -1,0 +1,53 @@
+.contenedor-barra-lateral{
+    width: 15%;
+    height: 100%;
+    background-color: var(--main-bg-color);
+}
+
+.contenedor-barra-lateral a {
+    color:gray ;
+}
+
+.contenedor-barra-lateral a:link {
+    color:gray !important;
+}
+  
+.contenedor-barra-lateral a:hover {
+    color: honeydew !important;
+}
+  
+.contenedor-barra-lateral a:active {
+    color: gray;
+} 
+
+.contenedor-barra-lateral a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+
+.contenedor-barra-lateral .barra-lateral-menu{
+    margin-top: 0;
+    padding-top: 5rem;
+    margin-left: 2rem;
+    
+}
+
+.contenedor-barra-lateral .barra-menu{
+    color: gray;
+    list-style: none;
+
+}
+
+.contenedor-barra-lateral .barra-lateral-listas{
+    margin-left: -1rem;
+    overflow-y: auto;
+}
+
+.contenedor-barra-lateral .barra-listas{
+    color: gray;
+    list-style: none;
+}
+
+.contenedor-barra-lateral .icon-barra-lateral{
+    margin-right: 0.5rem;
+}

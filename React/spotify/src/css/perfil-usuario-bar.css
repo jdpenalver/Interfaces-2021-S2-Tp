@@ -1,0 +1,62 @@
+.perfil-usuario-bar{
+    position: relative;
+    background-color: var(--secundary-bg-color);
+    width: 22%; 
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.perfil-usuario-bar .user-icon {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: var(--tercer-gb-color);
+    background-image:url('../img/icon/user-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.perfil-usuario-bar label{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: "";
+    width: 70%;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.perfil-usuario-bar .down-icon{
+    background: url('../img/icon/arrow-down.svg') no-repeat;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+}
+
+.perfil-usuario-bar .icon{
+    stroke-width: 1px;
+    line-height: 1px;
+    fill:white;
+    stroke-width: 1px;
+}
+.perfil-usuario-bar .boton {
+    cursor: pointer;
+}
+.perfil-usuario-bar .user-bar:hover {
+    background-color: var(--quinto-bg-color);
+    
+} 
+.avatar-container {
+    background-color: var(--quinto-bg-color);
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.avatar {
+height: 100%;
+
+}

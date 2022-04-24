@@ -1,0 +1,17 @@
+.edit-profile{
+    margin: 2rem;
+}
+
+.img-container {
+    width: 15rem;
+}
+
+.profile-containner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.user-info{
+    margin: 0 auto;
+}

@@ -1,0 +1,40 @@
+.reproductor{
+    display: block;
+    width: 100%;
+    height: 15%;
+    background-color: var(--tercer-bg-color);
+    position:fixed ;
+    bottom: 0;
+}
+.actionPanelContainer{
+    margin: 5px;
+    color: var(--font-menu-color)
+}
+
+.prev > svg{
+fill: var(--color-verde) ;
+border-radius:5px;
+height: 30px !important;
+width: 30px !important;
+margin-left: 15px ;    
+}
+
+.next > svg {
+    border-radius:5px;
+    fill: var(--color-verde) ;
+    height: 30px !important;
+    width: 30px !important;
+    margin-left: 15px ;    
+}
+
+.play > svg {
+    fill: var(--color-verde) ;
+}
+
+.durationRange span{
+    color: whitesmoke;
+}
+
+.pause > svg {
+    fill: var(--color-verde) ;
+}

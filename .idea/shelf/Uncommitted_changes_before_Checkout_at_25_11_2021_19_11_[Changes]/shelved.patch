@@ -1,0 +1,86 @@
+Index: React/spotify/src/API/SpotifyApi.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import axios, { Axios } from \"axios\";\r\n\r\n// const getBeer = () => axios.get(\"https://api.punkapi.com/v2/beers\")\r\n//                             .then(({data}) => data)\r\n//                             .catch((e) => console.log(e))\r\n                        \r\n\r\nconst server = \"http://localhost:7000/\"\r\n\r\n// const get = () =>  (url, config) => axios.get (url , config)\r\n//                     .then((data) => data)\r\n//                     .catch((error)=> Promise.reject(error.response.data))\r\n\r\nconst get = (url) => axios.get (url,  { headers: { Authorization: localStorage.getItem('token')} })\r\n                    .then((data) => data)\r\n                    .catch((error)=> Promise.reject(error.response.data))\r\n\r\nconst getConToken = (path)=>get( server + path, {headers: { Authorization: localStorage.getItem('token')}  })\r\n                                    .then((data)=> data)\r\n                                    .catch((e)=> console.log(e)) \r\n                                    \r\nconst getSearch = (parametro) => getConToken(\"search?q=\" + parametro)\r\n                               \r\n\r\n// const post = (datos) => Axios.post(url, datos)\r\n//                             .then(({data}) => data)\r\n//                             .catch((error) => Promise.reject(error.response.data))\r\n                            \r\n\r\n// \r\n// const getSong=()=>getConToken()\r\n\r\n\r\n// const register = (datauser) => post('http://localhost:7000/register', datauser)\r\n\r\n// const login = (datalogin) => post('http://localhost:7000/login', datalogin)\r\n//                              .then((d) => console.log(d))\r\n//                              .then((d) => localStorage.setItem('token', d.headers.Authorization))\r\n\r\n                        \r\nconst Api = { \r\n    getSearch,\r\n    getConToken,\r\n    get\r\n}\r\n\r\n export default Api\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/React/spotify/src/API/SpotifyApi.js b/React/spotify/src/API/SpotifyApi.js
+--- a/React/spotify/src/API/SpotifyApi.js	(revision daa2dcd39b209677de3a014a0b0145ecb7367f8b)
++++ b/React/spotify/src/API/SpotifyApi.js	(date 1637875935854)
+@@ -1,25 +1,50 @@
+-import axios, { Axios } from "axios";
+-
+-// const getBeer = () => axios.get("https://api.punkapi.com/v2/beers")
+-//                             .then(({data}) => data)
+-//                             .catch((e) => console.log(e))
+-                        
++import Axios  from "axios";
++import { scryRenderedComponentsWithType } from "react-dom/test-utils";
++                      
+ 
+ const server = "http://localhost:7000/"
++const headerTest = {'Autorization' : localStorage.getItem('token')}
++const dataTest = {
++    "email": "a@gmail.com",
++    "password": "a"
++}
++
++
++
++const post = (url, data, headers)  => Axios.post(url,data, headers)
++                            .then(({data})=> data)
++                            .catch ((e) => e) 
+ 
+-// const get = () =>  (url, config) => axios.get (url , config)
+-//                     .then((data) => data)
+-//                     .catch((error)=> Promise.reject(error.response.data))
++//=======================POST==============================
+ 
+-const get = (url) => axios.get (url,  { headers: { Authorization: localStorage.getItem('token')} })
++const postConToken = (url, body) => Axios.post(server + url , body ,  { headers: { Authorization: localStorage.getItem('token')} })
++                    .then((data) => data)
++                    .catch((error)=> Promise.reject(error.response.data))
++
++const postTestData = () =>  post("http://localhost:7000/login", dataTest,headerTest)
++                                .then((res) => res)
++
++
++//=======================GETS==============================
++
++const get = (url) => Axios.get (url,  { headers: { Authorization: localStorage.getItem('token')} })
+                     .then((data) => data)
+                     .catch((error)=> Promise.reject(error.response.data))
+ 
+ const getConToken = (path)=>get( server + path, {headers: { Authorization: localStorage.getItem('token')}  })
+                                     .then((data)=> data)
+                                     .catch((e)=> console.log(e)) 
++
++const getListaPorId = (listId)=>Axios.get(server + "playlist/" + listId, {headers: { Authorization: localStorage.getItem('token')} })
++                    .then(({data})=> data)
++                    .catch((e)=> console.log(e)) 
++
+                                     
++
++
+ const getSearch = (parametro) => getConToken("search?q=" + parametro)
++
++
+                                
+ 
+ // const post = (datos) => Axios.post(url, datos)
+@@ -41,8 +66,10 @@
+ const Api = { 
+     getSearch,
+     getConToken,
+-    get
++    get, 
++    postConToken, 
++    postTestData,
++    getListaPorId
+ }
+ 
+- export default Api
+-
++ export default Api
+\ No newline at end of file

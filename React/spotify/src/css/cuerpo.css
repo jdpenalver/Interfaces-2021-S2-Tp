@@ -1,0 +1,10 @@
+.cuerpo{
+  overflow-y: auto;
+  height: 75%;
+  width: 100%;
+  padding: 10px !important;
+  margin: 0em !important;
+  background-color: grey;
+  color: white;
+
+}

@@ -1,0 +1,58 @@
+.cardContenedorUsuario{
+    height: auto;    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);    
+    grid-gap: 10px;
+}
+
+
+.cardContenedorPlaylist{
+    height: auto;    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    
+    grid-gap: 10px;
+}
+
+.cardContenedorSongs{
+    height: auto;    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    
+    grid-gap: 10px;
+}
+
+.cardUser{
+    border: black 1px solid;
+    max-width: auto;
+    margin: 10px;
+    padding-top: 10px;
+    background-color: var(--main-bg-color);
+    
+}
+
+.cardPlayList{
+    border: black 1px solid;
+    max-width: auto;
+    margin: 10px;
+    padding-top: 10px;
+    background-color:  var(--main-bg-color);
+}
+
+.cardSong{
+    border: black 1px solid;
+    max-width: auto;
+    margin: 10px;
+    padding-top: 10px;
+    background-color:  var(--main-bg-color);
+}
+
+.imagenCardLista{
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+}
+
+.contenedorResultado{
+    
+    width: auto;
+    height: auto;
+}
